@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import Login from './components/Login.jsx';
-import Dashboard from './components/Dashbord.jsx';
+import Login from './components/Login';
+import Register from './components/Register';
+import Dashboard from './components/Dashboard';
 import './App.css';
 
 function App() {
-  const [currentView, setCurrentView] = useState('login'); // 'login', 'dashboard'
+  const [currentView, setCurrentView] = useState('login'); // 'login', 'register', 'dashboard'
   const [username, setUsername] = useState('');
 
   const handleLoginSuccess = (loggedInUser) => {
@@ -23,6 +24,13 @@ function App() {
         {currentView === 'login' && (
           <Login 
             onLoginSuccess={handleLoginSuccess} 
+            switchToRegister={() => setCurrentView('register')} 
+          />
+        )}
+
+        {currentView === 'register' && (
+          <Register 
+            switchToLogin={() => setCurrentView('login')} 
           />
         )}
 

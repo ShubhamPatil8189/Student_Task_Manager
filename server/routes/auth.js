@@ -6,6 +6,23 @@ let users = [
     { username: "admin", password: "password123" }
 ];
 
+// Register Route
+router.post('/register', (req, res) => {
+    const { username, password } = req.body;
+
+    if (!username || !password) {
+        return res.status(400).json({ success: false, message: "Username and password are required" });
+    }
+
+    const existingUser = users.find(u => u.username === username);
+    if (existingUser) {
+        return res.status(400).json({ success: false, message: "Username already exists" });
+    }
+
+    users.push({ username, password });
+    res.status(201).json({ success: true, message: "Registration successful! Please log in." });
+});
+
 // Login Route
 router.post('/login', (req, res) => {
     const { username, password } = req.body;
