@@ -1,3 +1,4 @@
+import Analytics from './Analytics';
 function Sidebar({ activeTab, setActiveTab, onLogout }) {
   const menuItems = [
     { id: 'dashboard', label: 'Dashboard', icon: '📊' },
