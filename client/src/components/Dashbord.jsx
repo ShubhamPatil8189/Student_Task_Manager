@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Sidebar from './Sidebar';
+import ProfileView from './views/ProfileView.jsx';
 
 function Dashboard({ username, onLogout }) {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -36,13 +37,7 @@ function Dashboard({ username, onLogout }) {
           </div>
         );
       case 'profile':
-        return (
-          <div className="view-content">
-            <h2>User Profile</h2>
-            <p><b>Username:</b> {username}</p>
-            <p><b>Role:</b> Standard User</p>
-          </div>
-        );
+        return <ProfileView username={username} />; // Render profile view here
       case 'settings':
         return (
           <div className="view-content">
