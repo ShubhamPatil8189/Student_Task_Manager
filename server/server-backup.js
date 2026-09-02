@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const authRoutes = require('./routes/auth');
+const profileRoutes = require('./routes/profile');
 
 const app = express();
 const PORT = 5000;
@@ -13,6 +14,7 @@ console.log('Server is starting...');
 
 // Mount Modular Routes
 app.use('/api', authRoutes);
+app.use('/api/profile', profileRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
