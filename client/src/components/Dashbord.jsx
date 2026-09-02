@@ -18,7 +18,7 @@ function Dashboard({ username, onLogout }) {
                 <p className="stat-number">12</p>
               </div>
               <div className="stat-card">
-                <h3>Completed</h3>
+                <h3>Completed till now</h3>
                 <p className="stat-number">8</p>
               </div>
               <div className="stat-card">
