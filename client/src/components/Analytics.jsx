@@ -8,7 +8,7 @@ function Analytics() {
     return (
         <div className="view-content">
 
-            <h2>📈 Analytics Dashboard</h2>
+            <h2>📈 Analytics Dashboard Sample</h2>
 
             <div className="stats-grid">
 
